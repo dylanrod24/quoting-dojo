@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add a quote</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <form action="/load_quotes" method="POST">
+        <div class="container">
+            <% if(messages.quote) { %>
+                <% for (var x of messages.quote) { %>
+                    <h4><%= x %></h4>
+                <% } %>
+            <% } %>
+            <div class="col-md">
+                <div class="row">
+                    <h1>Welcome to Quote Central</h1>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Your name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="quote"></label>
+                        <textarea class="form-control" id="quote" name="quote" placeholder="Your quote" rows="3"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-info btn-sm">Add to my quote</button>
+                <button type="submit" class="btn btn-info btn-sm">Skip to quotes</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
